@@ -10,62 +10,59 @@ export function ReturnApp(props) {
 
     return (
         <body>
-        <section className="section" style={{textAlign: "center"}}>
-            <div className="container" style={{textAlign: "center"}}>
-                <div className="columns">
-                    <div className="column is-three-quarters">
-                        <Header title={config.appTitle}/>
-                        <br/>
-                        <div className="card">
-                            <div className="card-content">
-                                <form id="form">
-                                    {config.fields.map((field, index) => (
-                                        <Field
-                                            key={index}
-                                            label={field.label}
-                                            id={`field-${index}`}
-                                            type={field.type}
-                                            icon={field.icon}
-                                            hoverText={field.hoverText}
-                                        />
-                                    ))}
-                                    <textarea
-                                        id={"textarea-0"}
-                                        className="textarea"
-                                        placeholder={config.textArea.hoverText}
-                                    ></textarea>
-                                    <br/>
-                                    <div id="my-button" className="control">
-                                        <button
-                                            id="button"
-                                            className="button is-large is-fullwidth is-primary is-outlined"
-                                            type={"button"}
-                                            {...(load ? {onClick: load} : {})}
-                                        ></button>
-                                    </div>
-                                </form>
+        <div className="sections-container" style={{display: "flex", width: "100%", justifyContent: "space-between"}}>
+            <section className="section" style={{flex: '1 1 20%', padding: "40px 40px", width: "50vw"}}>
+                <Header title={config.appTitle}/>
+                <br/>
+                <div className="card">
+                    <div className="card-content">
+                        <form id="form" style={{overflow: "hidden", display: "flex", flexDirection: "column"}}>
+                            {config.fields.map((field, index) => (
+                                <Field
+                                    key={index}
+                                    style={{overflow: "hidden", display: "flex", flexDirection: "column", width: "auto"}}
+                                    label={field.label}
+                                    id={`field-${index}`}
+                                    type={field.type}
+                                    icon={field.icon}
+                                    hoverText={field.hoverText}
+                                />
+                            ))}
+                            <textarea
+                                id="textarea-0"
+                                className="textarea"
+                                placeholder={config.textArea.hoverText}
+                            ></textarea>
+                            <br/>
+                            <div id="my-button" className="control">
+                                <button
+                                    id="button"
+                                    className="button is-large is-fullwidth is-primary is-outlined"
+                                    type="button"
+                                    {...(load ? {onClick: load} : {})}
+                                ></button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section className="section">
-            <h1 className="title ">{config.resultRowTitle}</h1>
-            <div className="columns is-multiline">
-                {config.resultBoxes.map((box, index) => (
-                    <ResultBox
-                        key={index}
-                        id={`resultBox-${index}`}
-                        suffix={box.suffix}
-                        text={box.text}
-                        color={getColor()}
-                        large={index === 1} // Pass 'large' prop as true for the first two boxes
-                    />
-                ))}
-            </div>
-        </section>
+            <section className="section" style={{flex: '1 1', padding: "40px 20px"}}>
+                <h1 className="title">{config.resultRowTitle}</h1>
+                <div className="columns is-multiline is-full">
+                    {config.resultBoxes.map((box, index) => (
+                        <ResultBox
+                            key={index}
+                            id={`resultBox-${index}`}
+                            suffix={box.suffix}
+                            text={box.text}
+                            color={getColor()}
+                            large={index === 0 || index === 1} // Assuming you want the first two boxes to be larger.
+                        />
+                    ))}
+                </div>
+            </section>
+        </div>
         </body>
     );
 }

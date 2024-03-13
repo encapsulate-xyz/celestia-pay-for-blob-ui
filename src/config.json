@@ -6,10 +6,40 @@
   "missingValuesMessage": "Please fill in some data to be submitted",
   "fields": [
     {
-      "label": "NameSpace Id",
+      "label": "Your Node IP",
       "type": "text",
-      "icon": "fa-id-card",
-      "hoverText": "Enter the NameSpace Id if you have one or a new NameSpace Id will be generated for you to use"
+      "icon": "fa-network-wired",
+      "hoverText": "Enter the IP address of your data availability node."
+    },
+    {
+      "label": "RPC Port",
+      "type": "text",
+      "icon": "fa-plug",
+      "hoverText": "Enter the RPC port number of your data availability node."
+    },
+    {
+      "label": "Auth Token",
+      "type": "text",
+      "icon": "fa-key",
+      "hoverText": "Enter the authentication token for your data availability node."
+    },
+    {
+      "label": "Namespace ID",
+      "type": "text",
+      "icon": "fa-tags",
+      "hoverText": "Enter the Namespace ID if you have one, or leave this blank to have a new Namespace ID generated for you."
+    },
+    {
+      "label": "Commitment",
+      "type": "text",
+      "icon": "fa-handshake",
+      "hoverText": "Optional"
+    },
+    {
+      "label": "Share Version",
+      "type": "text",
+      "icon": "fa-code-branch",
+      "hoverText": "Optional"
     }
   ],
   "resultRowTitle": "Submission Results",

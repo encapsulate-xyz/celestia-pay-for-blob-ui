@@ -52,18 +52,18 @@ function App() {
     const computeResults = () => {
         return new Promise(async (resolve) => {
             console.log("loading");
-            let { namespaceId, textData } = readInput();
+            let { ip, port,authToken, namespaceId, commitment, shareVersion, textData} = readInput();
             textData = textToHex(textData);
 
             console.log(namespaceId, textData);
 
-            if (!namespaceId || !textData) {
+            if (!ip || !port || !authToken || !textData || !namespaceId) {
                 handleError(config.missingValuesMessage);
                 return resolve(); // Resolve the promise if there's an error
             }
 
             try {
-                const [height] = await Promise.all([submitPfb(namespaceId, textData)]);
+                const [height] = await Promise.all([submitPfb(ip, port,authToken, namespaceId, commitment, shareVersion, textData)]);
 
                 console.log(`height: ${height}`);
 
@@ -78,8 +78,10 @@ function App() {
                 }
 
                 const sharesAtHeight = await getNameSpaceSharesAtHeight(
+                    ip, port,authToken,
                     namespaceId,
-                    height
+                    height,
+                    commitment
                 );
 
                 if (
@@ -107,10 +109,15 @@ function App() {
 
 
     const readInput = () => {
-        const namespaceId = document.getElementById('field-0').value || generateRandHexEncodedNamespaceID();
+        const ip = document.getElementById('field-0').value // || generateRandHexEncodedNamespaceID();
+        const port = document.getElementById('field-1').value;
+        const authToken = document.getElementById('field-2').value;
+        const namespaceId = document.getElementById('field-3').value;
+        const commitment = document.getElementById('field-4').value;
+        const shareVersion = parseInt(document.getElementById('field-5').value);
         const textData = document.getElementById('textarea-0').value;
 
-        return {namespaceId, textData};
+        return {ip, port,authToken, namespaceId, commitment, shareVersion, textData};
     };
 
     const handleError = (message) => {
