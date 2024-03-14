@@ -13,7 +13,7 @@
 }
 
 /* Media query for viewport widths less than 1000px */
-@media (max-width: 1000px) {
+@media (max-width: 1480px) {
     .sections-container {
         flex-direction: column; /* This stacks children vertically */
     }
