@@ -7,7 +7,7 @@ export function ResultBox({ id, suffix, text, color, large }) {
         : "is-12-tablet is-3-desktop is-3-widescreen";
 
     return (
-        <div className={`column ${columnSize}`}>
+        <div className={`column ${columnSize}`} style={{width: '100%'}}>
             <div className={`notification ${color} has-text`}>
                 <p id={id} className="title is-1">
 

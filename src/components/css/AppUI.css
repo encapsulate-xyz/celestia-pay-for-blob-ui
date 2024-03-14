@@ -1,0 +1,25 @@
+/* Default styles for sections-container */
+.sections-container {
+    display: flex;
+    width: "100%";
+    justify-content: "space-between";
+}
+
+/* Default styles for section */
+.section {
+    flex: 1 1 20%;
+    padding: 20px;
+    width: 50vw; /* Adjust if necessary for your design */
+}
+
+/* Media query for viewport widths less than 1000px */
+@media (max-width: 1000px) {
+    .sections-container {
+        flex-direction: column; /* This stacks children vertically */
+    }
+
+    .section {
+        width: 100%; /* Adjust each section to take full width of its container */
+        flex: none; /* Override any previous flex settings */
+    }
+}

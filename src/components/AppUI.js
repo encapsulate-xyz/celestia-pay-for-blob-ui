@@ -4,15 +4,20 @@ import {Field} from "./Field";
 import {ResultBox} from "./ResultBox";
 import {getColor} from "../helper/getColor";
 import './css/TextArea.css'
+import './css/AppUI.css'
 
 export function ReturnApp(props) {
     const {load, config} = props;
 
     return (
         <body>
-        <div className="sections-container" style={{display: "flex", width: "100%", justifyContent: "space-between"}}>
-            <section className="section" style={{flex: '1 1 20%', padding: "40px 40px", width: "50vw"}}>
-                <Header title={config.appTitle}/>
+        {/*<div className="sections-container" style={{display: "flex", width: "100%", justifyContent: "space-between"}}>*/}
+        {/*    <section className="section" style={{flex: '1 1 20%', padding: "20px 20px", width: "50vw"}}>*/}
+        <Header title={config.appTitle}/>
+        <div className="sections-container">
+
+            <section className="section">
+
                 <br/>
                 <div className="card">
                     <div className="card-content">
@@ -47,9 +52,10 @@ export function ReturnApp(props) {
                 </div>
             </section>
 
-            <section className="section" style={{flex: '1 1', padding: "40px 20px"}}>
+            {/*<section className="section" style={{flex: '1 1', padding: "20px 20px"}}>*/}
+                <section className="section">
                 <h1 className="title">{config.resultRowTitle}</h1>
-                <div className="columns is-multiline is-full">
+                <div className="columns is-multiline" style={{width: "100%!important"}}>
                     {config.resultBoxes.map((box, index) => (
                         <ResultBox
                             key={index}
