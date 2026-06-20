@@ -14,7 +14,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.22.2",
-    "http-proxy-middleware": "^2.0.6",
+    "http-proxy-middleware": "^3.0.7",
     "json-formatter-js": "^2.3.4",
     "react": "16.8.6",
     "react-dom": "16.8.6",
