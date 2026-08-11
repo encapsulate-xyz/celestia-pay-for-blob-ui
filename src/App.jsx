@@ -2,7 +2,7 @@ import './App.css';
 import './components/css/Button.css';
 import React, {useState} from 'react';
 import {ReturnApp} from "./components/AppUI";
-import config from './config';
+import config from './config.json';
 import {submitPfb} from "./api-calls/requests/submit-pfb";
 import {getNameSpaceSharesAtHeight} from "./api-calls/requests/namespaced-shares";
 import {jsonToHtml} from "./helper/pretty-print-json";

@@ -10,7 +10,7 @@ export function ReturnApp(props) {
     const {load, config} = props;
 
     return (
-        <body>
+        <div className="app-container">
         {/*<div className="sections-container" style={{display: "flex", width: "100%", justifyContent: "space-between"}}>*/}
         {/*    <section className="section" style={{flex: '1 1 20%', padding: "20px 20px", width: "50vw"}}>*/}
         <Header title={config.appTitle}/>
@@ -69,6 +69,6 @@ export function ReturnApp(props) {
                 </div>
             </section>
         </div>
-        </body>
+        </div>
     );
 }
