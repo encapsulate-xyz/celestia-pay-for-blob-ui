@@ -1,5 +1,5 @@
-const express = require('express');
-const { createProxyMiddleware } = require('http-proxy-middleware');
+import express from 'express';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
 const port = process.env.PORT || 3000;

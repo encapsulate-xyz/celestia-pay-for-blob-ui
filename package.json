@@ -1,44 +1,35 @@
 {
-  "name": "fetch-and-show-a-list-of-game-of-thrones-books-base",
+  "name": "celestia-pay-for-blob-ui",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "Part of the React Challenges for Scotch.io",
-  "keywords": [],
-  "main": "src/index.js",
+  "description": "Celestia Pay For Blob UI",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "proxy": "nodemon src/cors-proxy/proxy.js"
+  },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "axiom": "0.52.2",
-    "axios": "^1.18.0",
-    "bootstrap": "^4.5.3",
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "axios": "^1.7.9",
+    "bootstrap": "^5.3.3",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.22.2",
-    "http-proxy-middleware": "^3.0.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "http-proxy-middleware": "^3.0.3",
     "json-formatter-js": "^2.3.4",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "react-scripts": "^5.0.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "typescript": "3.3.3"
-  },
-  "overrides": {
-    "nth-check": "2.0.1",
-    "postcss": "^8.4.31",
-    "webpack-dev-server": "5.2.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "proxy": "nodemon src/cors-proxy/proxy.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ]
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "typescript": "^5.4.0",
+    "vite": "^6.0.0"
+  }
 }
